@@ -254,13 +254,89 @@ void showKhachHang(KH a[], int n) {
 	printLine(80);
 }
 //ham sap xep khach hang theo ma tang dan
+void sapxep TheoMaKH (KH a[], int n) {
+	KH tmp;
+	for(int i = 0;i < n;i++) {
+		for(int j=i+1; j < n;j++) {
+			if(a[i].MaKH > a[j]. MaKH) {
+				tmpl= a[i];
+				a[i] = a[j];
+				a[j] = tmp;
+			}
+		}
+	}
+}
 ///ham sap xep khach hang thoeo ten theo thu tu tang dan
+void sapXepTheoTen (KH a[], int n) {
+	KH tmp;
+	char tenKH1[30];
+	char tenKH2 [30];
+	for(int i = 0;i < n; i++) {
+		strcpy(tenKH1, a[i].TenKH);
+		for(int j=i+1; j < n; j++) {' j++) {
+			strcpy(tenKH2, a[j]. TenKH);
+			if(strcmp(strupr (tenKH1), strupr(tenKH2)) > 0) {
+				tmp = a[i];
+				a[i] = a[j];
+				a[j] = tmp;
+			}
+		}
+	}
+}
 //ham ma so lon nhat
+int idLonNhat (KH a[], int n) {
+	int idMax = 0;
+	if (n > 0) {
+		idMax = a[0].MaKH;
+		for(int i=0;i < n; i++) {
+			if (a[i].MaKH > idMax) {
+				idMax = a[i].MaKH;
+			}
+		}
+	}
+	return idMax;
+}
 //ham doc file khach hang
+int docFile(KH a[], char fileName[]) {
+	FILE fp;
+	int i = 0;
+	fpfopen (fileName, "r");
+	cout << "Chuan bi doc file: "; puts (fileName);
+	//Doc thong tin khach hang
+	while (fscanf(fp, "%5d%30s%9s%5d%20s%20s\n", &a[i].MaKH, &a[i].TenKH, &a[i].GioiTinh, &a[i].NamSinh, &a[i].SDT, &a[i].Dia Chi &a[i].);
+		i++;
+		cout << "Doc ban ghi thu: " << i << endl;
+	}
+	cout << "So luong khach hang co trong file la: " << i << endl;
+	cout << endl;
+	fclose (fp);
+	//Tra ve so Luong khach hang duoc doc tu file
+	return i;
+}
 //ham ghi file khach hang
-//ham in danh sach khach hang
-//ham lua chon phim
+void ghiFile(KH a[], int n, char fileName[]) {
+	FILE fp;
+	fpfopen (fileName, "w");
+	for(int i=0;i < n;i++){
+		fprintf(fp, "%5dX30s%9s%5d%20s%20s\n", a[i].MaKH, a[i].TenKH, a[i].GioiTinh, a[i].NamSinh, a[i].SDT, a[i].Dia chi, a[i].);
+	}
 
+	fclose (fp);
+}
+//ham in danh sach khach hang
+void printLine(int n) {
+	cout << endl;
+	for (int i = 0; i < n; i++) {
+		cout << "_";
+	}
+	cout << endl;
+}
+//ham lua chon phim
+void PressAnyKey() {
+	cout << "\n\nBam phim bat ki de tiep tuc...";
+	getch();
+	system("cls");
+}
 
 
 
