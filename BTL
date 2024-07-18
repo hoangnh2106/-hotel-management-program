@@ -11,7 +11,7 @@ using namespace std;
 struct KhachHang {
 	int MaKH;
 	char TenKH[30];
-	char GioiTInh[5];
+	char GioiTinh[5];
 	int NamSinh;
 	char SDT[11];
 	char DiaCHi[30];
@@ -22,7 +22,7 @@ void printLine(int n);
 void nhapThongTinKH (KH &kh, int id);
 void nhapKH(KH a[], int id, int n);
 void capNhatThongTin(KH &kh);
-void  chapNhatKH(KH a[], int id, int n);
+void  capNhatKH(KH a[], int id, int n);
 int xoaTheoID(KH a[], int id, int n);
 void timKiemTheoTen(KH a[], char ten[], int n);
 
