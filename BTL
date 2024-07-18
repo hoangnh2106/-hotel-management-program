@@ -107,16 +107,42 @@ int main(){
 				pressAnyKey();
 				break;
 			case 5:
-				
+				if(soluongKH>00{
+					cout << "------------- SAP XEP KHACH HANG THEO MA SO -------------";
+					sapxepTheoMaKH ( arrayKH, soluongKH);
+					showKhachHang (arrayKH, soluongKH);
+				}else{
+					cout << "\nDanh sach khach hang trong!";
+				}
+				pressAnyKey();
 				break;
 			case 6:
-				
+				if(soluongKH > 0) {
+					cout <<"\n------------- SAP XEP KHAC HANG THEO TEN -------------";
+					sapXepTheoTen (arrayKH, soluongKH); showKhachHang (arrayKH, soluongKH);
+				} else {
+					cout << "\nDanh sach khach hang trong!";
+				}
+				pressAnyKey();
 				break;
 			case 7:
-				
+				if(soluongKH > 0) {
+					cout << "\n------------- HIEN THI DANH SACH KHACH HANG -------------";
+				showKhachHang (arrayKH, soluongKH);
+				}else{
+					cout << "\nDanh sach khach hang trong!";
+				}
+				pressAnyKey();
 				break;
 			case 8:
-				
+				if(soluongKH > 0) {
+					cout << "\n------------- GHI DANH SACH KHACH HANG VAO FILE -------------";
+					ghiFile(arrayKH, soluongKH, fileName);
+				}else{
+					cout << "\nDanh sach khach hang trong!";
+				}
+					printf("\nGhi danh sach vao file %s thanh cong!", fileName);
+				pressAnyKey();
 				break;
 			case 0:
 				cout << "\n----------- THOAT CHUONG TRINH ----------";
